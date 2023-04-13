@@ -10,7 +10,7 @@ void sqlite_get_data()
     int rc;
     if (SQLITE_OK != (rc = sqlite3_open(DB_FILE, &db)))
     {
-        fprintf(stderr, "Cannot open database: %s\n", sqlite3_errmsg(db));
+        
         sqlite3_close(db);
     }
 
@@ -31,8 +31,7 @@ void sqlite_get_data()
     rc = sqlite3_exec(db, sql, callback, NULL, &err_msg);
     if (rc != SQLITE_OK)
     {
-        fprintf(stderr, "Failed to select data\n");
-        fprintf(stderr, "SQLite error: %s\n", err_msg);
+        
         sqlite3_free(err_msg);
         sqlite3_close(db);
     }
@@ -46,7 +45,7 @@ void sqlite_insert(char *name, char* annotation, int num_pages, char* ISBN, int 
     int rc;
     if (SQLITE_OK != (rc = sqlite3_open(DB_FILE, &db)))
     {
-        fprintf(stderr, "Cannot open database: %s\n", sqlite3_errmsg(db));
+        
         sqlite3_close(db);
     }
 
@@ -55,8 +54,7 @@ void sqlite_insert(char *name, char* annotation, int num_pages, char* ISBN, int 
     rc = sqlite3_exec(db, sql, callback, NULL, &err_msg);
     if (rc != SQLITE_OK)
     {
-        fprintf(stderr, "Failed to select data\n");
-        fprintf(stderr, "SQLite error: %s\n", err_msg);
+        
         sqlite3_free(err_msg);
         sqlite3_close(db);
     }
@@ -70,7 +68,7 @@ void sqlite_delete(int bookid)
     int rc;
     if (SQLITE_OK != (rc = sqlite3_open(DB_FILE, &db)))
     {
-        fprintf(stderr, "Cannot open database: %s\n", sqlite3_errmsg(db));
+        
         sqlite3_close(db);
     }
 
@@ -79,8 +77,7 @@ void sqlite_delete(int bookid)
     rc = sqlite3_exec(db, sql, callback, NULL, &err_msg);
     if (rc != SQLITE_OK)
     {
-        fprintf(stderr, "Failed to select data\n");
-        fprintf(stderr, "SQLite error: %s\n", err_msg);
+        
         sqlite3_free(err_msg);
         sqlite3_close(db);
     }
@@ -94,7 +91,7 @@ void sqlite_update(int bookid, char *name, char* annotation, int num_pages, char
     int rc;
     if (SQLITE_OK != (rc = sqlite3_open(DB_FILE, &db)))
     {
-        fprintf(stderr, "Cannot open database: %s\n", sqlite3_errmsg(db));
+        
         sqlite3_close(db);
     }
 
@@ -104,8 +101,7 @@ void sqlite_update(int bookid, char *name, char* annotation, int num_pages, char
     rc = sqlite3_exec(db, sql_comp, NULL, NULL, &err_msg);
     if (rc != SQLITE_OK)
     {
-        fprintf(stderr, "Failed to update data in components\n");
-        fprintf(stderr, "SQLite error: %s\n", err_msg);
+        
         sqlite3_free(err_msg);
         sqlite3_close(db);
     }
