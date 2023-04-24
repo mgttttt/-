@@ -1,0 +1,2 @@
+/home/mikhail/prog/lab5/lab5Danil/shifr.o
+
