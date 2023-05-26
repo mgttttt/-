@@ -104,6 +104,6 @@ static void __exit password_gen_exit(void)
 module_init(password_gen_init);
 module_exit(password_gen_exit);
 
-
+MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Yarik"); 
 MODULE_DESCRIPTION("Password generator device driver");
