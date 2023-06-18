@@ -97,9 +97,11 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT msg, WPARAM wParam, LPARAM lParam) {
         break;
     }
     case WM_CLOSE:
+        SaveList();
         DestroyWindow(hwnd);
         break;
     case WM_DESTROY:
+        SaveList();
         PostQuitMessage(0);
         break;
     }
